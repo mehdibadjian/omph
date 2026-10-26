@@ -4,7 +4,7 @@
 | Specification Metadata | Details |
 | :--- | :--- |
 | **Spec ID** | `SPEC-OMH-OMP-OR-2026-001` |
-| **Related BRD** | [BRD.md](file:///data/data/com.termux/files/home/k3s-vm/dev/ohmy/BRD.md) (`BRD-OMH-OMP-OR-2026-001`) |
+| **Related BRD** | [BRD.md](./BRD.md) (`BRD-OMH-OMP-OR-2026-001`) |
 | **Version** | `1.1.0` (Verified Live against OpenRouter `/api/v1/models`) |
 | **Status** | Live & Smoke-Tested (`OMP_FREE_ROUTER_READY`) |
 
