@@ -23,6 +23,17 @@ model:
     writer: openrouter/dots-studio/dots-3-note-preview:free
     fallback: openrouter/openrouter/free
 
+agent:
+  max_turns: 80
+
+tool_loop_guardrails:
+  hard_stop_enabled: true
+  no_progress_block_after: 5
+
+tools:
+  tool_search:
+    enabled: auto
+
 retry:
   max_attempts: 10
   initial_delay_ms: 1500
@@ -30,10 +41,16 @@ retry:
   backoff_multiplier: 2.0
   retry_on_status: [429, 500, 502, 503, 504]
 
+skills:
+  external_dirs:
+    - /data/data/com.termux/files/home/.omh/skills
+
 plugins:
+  enabled:
+    - omh
   entries:
     omh:
       enabled: true
       settings:
         omh_home: /data/data/com.termux/files/home/.omh
-        dreaming_mode: auto
+        dreaming_mode: reminder
