@@ -1,0 +1,89 @@
+# ~/.omp/agent/config.yml
+# Oh My Pi (omp) Global Configuration — Strict Free-Tier OpenRouter + Rate-Limit Failover
+shellPath: /data/data/com.termux/files/home/.local/bin/omp-shell
+
+# 1. Strict Provider & Free-Model Lock ($0.00 Spend Guarantee)
+modelProviderOrder:
+  - openrouter
+enabledProviders:
+  - openrouter
+enabledModels:
+  - openrouter/thinkingmachines/inkling:free
+  - openrouter/thinkingmachines/inkling-small:free
+  - openrouter/poolside/laguna-s-2.1:free
+  - openrouter/poolside/laguna-xs-2.1:free
+  - openrouter/cohere/north-mini-code:free
+  - openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+  - openrouter/nvidia/nemotron-3.5-super-vl:free
+  - openrouter/nvidia/nemotron-3.5-lightning:free
+  - openrouter/nvidia/nemotron-3-super-120b-a12b:free
+  - openrouter/recursive/flint-v1.0:free
+  - openrouter/dots-studio/dots-3-note-preview:free
+  - openrouter/xingchen-agi/xing4.0-29b-a4b:free
+  - openrouter/google/gemma-4-31b-it:free
+  - openrouter/google/gemma-4-26b-a4b-it:free
+  - openrouter/openrouter/free
+
+# 2. Primary Live Free Models by Agent Role
+modelRoles:
+  default: openrouter/thinkingmachines/inkling:free
+  smol: openrouter/thinkingmachines/inkling-small:free
+  slow: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+  plan: openrouter/thinkingmachines/inkling:free
+
+# 3. OpenRouter Provider & Concurrency Guardrails (Prevents Free-Tier 429 Storms)
+providers:
+  openrouterVariant: default
+  maxInFlightRequests:
+    openrouter: 3
+
+task:
+  maxConcurrency: 4
+
+# 4. Token-Efficient Editing (Reduces Free-Tier TPM Pressure)
+edit:
+  mode: hashline
+  fuzzyMatch: true
+
+# 5. Rate-Limit Retry & Multi-Vendor Live Free Fallback Chains
+retry:
+  enabled: true
+  maxRetries: 10
+  baseDelayMs: 1500
+  maxDelayMs: 60000
+  waitForUsageReset: true
+  modelFallback: true
+  fallbackOn: any
+  fallbackRevertPolicy: cooldown-expiry
+  fallbackChains:
+    default:
+      - openrouter/poolside/laguna-s-2.1:free
+      - openrouter/cohere/north-mini-code:free
+      - openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+      - openrouter/nvidia/nemotron-3.5-super-vl:free
+      - openrouter/recursive/flint-v1.0:free
+      - openrouter/google/gemma-4-31b-it:free
+      - openrouter/thinkingmachines/inkling-small:free
+      - openrouter/openrouter/free
+    smol:
+      - openrouter/nvidia/nemotron-3.5-lightning:free
+      - openrouter/poolside/laguna-xs-2.1:free
+      - openrouter/google/gemma-4-26b-a4b-it:free
+      - openrouter/google/gemma-4-31b-it:free
+      - openrouter/cohere/north-mini-code:free
+      - openrouter/openrouter/free
+    slow:
+      - openrouter/thinkingmachines/inkling:free
+      - openrouter/poolside/laguna-s-2.1:free
+      - openrouter/nvidia/nemotron-3.5-super-vl:free
+      - openrouter/dots-studio/dots-3-note-preview:free
+      - openrouter/recursive/flint-v1.0:free
+      - openrouter/google/gemma-4-31b-it:free
+      - openrouter/openrouter/free
+    plan:
+      - openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+      - openrouter/poolside/laguna-s-2.1:free
+      - openrouter/dots-studio/dots-3-note-preview:free
+      - openrouter/nvidia/nemotron-3.5-super-vl:free
+      - openrouter/google/gemma-4-31b-it:free
+      - openrouter/openrouter/free

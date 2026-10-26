@@ -1,0 +1,6 @@
+# Ignore local secret files and runtime artifacts
+.env
+*.log
+.omp/
+.omh/
+node_modules/

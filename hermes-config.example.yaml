@@ -1,0 +1,39 @@
+# Hermes Agent + Oh My Hermes (OMH) Configuration Template
+# Location: ~/.hermes/config.yaml
+
+provider:
+  name: openrouter
+  base_url: https://openrouter.ai/api/v1
+  api_key_env: OPENROUTER_API_KEY
+  routing:
+    allow_fallbacks: true
+    sort: throughput
+    # Server-side zero-cost enforcement at OpenRouter gateway
+    max_price:
+      prompt: 0
+      completion: 0
+
+model:
+  default: openrouter/thinkingmachines/inkling:free
+  aliases:
+    main: openrouter/thinkingmachines/inkling:free
+    coder: openrouter/poolside/laguna-s-2.1:free
+    reasoner: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+    fast: openrouter/thinkingmachines/inkling-small:free
+    writer: openrouter/dots-studio/dots-3-note-preview:free
+    fallback: openrouter/openrouter/free
+
+retry:
+  max_attempts: 10
+  initial_delay_ms: 1500
+  max_delay_ms: 60000
+  backoff_multiplier: 2.0
+  retry_on_status: [429, 500, 502, 503, 504]
+
+plugins:
+  entries:
+    omh:
+      enabled: true
+      settings:
+        omh_home: /data/data/com.termux/files/home/.omh
+        dreaming_mode: auto

@@ -1,0 +1,88 @@
+{
+  "schema_version": "mixture_chain_overrides/v1",
+  "categories": {
+    "ultrabrain": [
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "max"},
+      {"model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", "reasoning_effort": "high"},
+      {"model": "openrouter/poolside/laguna-s-2.1:free", "reasoning_effort": "high"},
+      {"model": "openrouter/dots-studio/dots-3-note-preview:free", "reasoning_effort": "high"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "high"}
+    ],
+    "deep": [
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "high"},
+      {"model": "openrouter/poolside/laguna-s-2.1:free", "reasoning_effort": "high"},
+      {"model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", "reasoning_effort": "high"},
+      {"model": "openrouter/recursive/flint-v1.0:free", "reasoning_effort": "high"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "high"}
+    ],
+    "architect": [
+      {"model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", "reasoning_effort": "high"},
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "high"},
+      {"model": "openrouter/dots-studio/dots-3-note-preview:free", "reasoning_effort": "high"},
+      {"model": "openrouter/poolside/laguna-s-2.1:free", "reasoning_effort": "high"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "high"}
+    ],
+    "unspecified-high": [
+      {"model": "openrouter/poolside/laguna-s-2.1:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/cohere/north-mini-code:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/nvidia/nemotron-3.5-super-vl:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "medium"}
+    ],
+    "unspecified-low": [
+      {"model": "openrouter/thinkingmachines/inkling-small:free", "reasoning_effort": "low"},
+      {"model": "openrouter/nvidia/nemotron-3.5-lightning:free", "reasoning_effort": "low"},
+      {"model": "openrouter/poolside/laguna-xs-2.1:free", "reasoning_effort": "low"},
+      {"model": "openrouter/google/gemma-4-31b-it:free", "reasoning_effort": "low"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "low"}
+    ],
+    "quick": [
+      {"model": "openrouter/nvidia/nemotron-3.5-lightning:free", "reasoning_effort": "low"},
+      {"model": "openrouter/thinkingmachines/inkling-small:free", "reasoning_effort": "low"},
+      {"model": "openrouter/poolside/laguna-xs-2.1:free", "reasoning_effort": "low"},
+      {"model": "openrouter/google/gemma-4-26b-a4b-it:free", "reasoning_effort": "low"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "low"}
+    ],
+    "writing": [
+      {"model": "openrouter/dots-studio/dots-3-note-preview:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/google/gemma-4-31b-it:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "medium"}
+    ],
+    "visual-engineering": [
+      {"model": "openrouter/nvidia/nemotron-3.5-super-vl:free", "reasoning_effort": "high"},
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "high"},
+      {"model": "openrouter/poolside/laguna-s-2.1:free", "reasoning_effort": "high"},
+      {"model": "openrouter/google/gemma-4-31b-it:free", "reasoning_effort": "high"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "high"}
+    ],
+    "artistry": [
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "high"},
+      {"model": "openrouter/dots-studio/dots-3-note-preview:free", "reasoning_effort": "high"},
+      {"model": "openrouter/google/gemma-4-31b-it:free", "reasoning_effort": "high"},
+      {"model": "openrouter/nvidia/nemotron-3.5-super-vl:free", "reasoning_effort": "high"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "high"}
+    ],
+    "capable": [
+      {"model": "openrouter/poolside/laguna-s-2.1:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/cohere/north-mini-code:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/recursive/flint-v1.0:free", "reasoning_effort": "medium"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "medium"}
+    ],
+    "simple-work": [
+      {"model": "openrouter/google/gemma-4-31b-it:free", "reasoning_effort": "low"},
+      {"model": "openrouter/thinkingmachines/inkling-small:free", "reasoning_effort": "low"},
+      {"model": "openrouter/poolside/laguna-xs-2.1:free", "reasoning_effort": "low"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "low"}
+    ],
+    "deep-work": [
+      {"model": "openrouter/thinkingmachines/inkling:free", "reasoning_effort": "max"},
+      {"model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free", "reasoning_effort": "high"},
+      {"model": "openrouter/poolside/laguna-s-2.1:free", "reasoning_effort": "high"},
+      {"model": "openrouter/recursive/flint-v1.0:free", "reasoning_effort": "high"},
+      {"model": "openrouter/openrouter/free", "reasoning_effort": "high"}
+    ]
+  }
+}
